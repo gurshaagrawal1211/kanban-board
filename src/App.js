@@ -50,66 +50,20 @@ const App = () => {
     localStorage.setItem('kanban-board', JSON.stringify({ groupingOption, orderingOption }));
   }, [groupingOption, orderingOption]);
 
-  const handleDisplayButtonClick = () => {
-    setDisplayOptionsVisible(!displayOptionsVisible);
-  };
-
-  const handleGroupingOptionChange = (option) => {
-    setGroupingOption(option);
-  };
-
-  const handleOrderingOptionChange = (option) => { 
-    setOrderingOption(option);
-  };
-  
-
   const contextValue = {
     data,
     groupingOption,
     setGroupingOption,
     orderingOption,
-    setOrderingOption
+    setOrderingOption,
+    displayOptionsVisible,
+    setDisplayOptionsVisible
   };
-
 
   return (
      <KanbanContext.Provider value={contextValue}>
        <div className="app">
-        <header>
-          <div className="display-container">
-            <button  onClick={handleDisplayButtonClick}>Display</button>
-            {displayOptionsVisible && (
-              <div className="dropdown-container">
-              <div className="dropdown-container-content">
-                <h4>Grouping</h4>
-                <select
-                  value={groupingOption}
-                  onChange={(e) => handleGroupingOptionChange(e.target.value)}
-                >
-                  <option value="status">Status</option>
-                  <option value="user">User</option>
-                  <option value="priority">Priority</option>
-                  {/* Add more options as needed */}
-                </select>
-              </div>
-
-
-              <div className="dropdown-container-content">
-                <h4>Ordering</h4>
-                <select
-                  value={orderingOption}
-                  onChange={(e) => handleOrderingOptionChange(e.target.value)}
-                >
-                  <option value="priority">Priority</option>
-                  <option value="title">Title</option>
-                  {/* Add more options as needed */}
-                </select>
-              </div>
-              
-              </div>
-            )}
-          </div>
-        </header>
+        <DisplayButton/>
         <KanbanBoard />
       </div>
      </KanbanContext.Provider>

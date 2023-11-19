@@ -15,11 +15,11 @@
     padding: 16px;
     border: 0.5px solid #ccc;
     margin-bottom: 16px;
+    background-color:white;
 }
 
 .kanban-card p {
     font-size: 14px;
-    
     color: rgb(138, 133, 133);
 }
 

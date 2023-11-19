@@ -23,11 +23,22 @@ const KanbanColumn = ({ title, tickets, users, groupingOption }) => {
 
   return (
     <div className="kanban-column">
+    <div className='column-title'>
+    <div className='column-title-sub'>
+      <span class="material-symbols-outlined">radio_button_unchecked</span>
       <h2>
         {groupingOption === 'user'
-          ? `${users.find((user) => user.id === title)?.name} (${getCountForTitle(title)})`
-          : `${title} (${getCountForTitle(title)})`}
+          ? `${users.find((user) => user.id === title)?.name} ${getCountForTitle(title)}`
+          : `${title} ${getCountForTitle(title)}`}
       </h2>
+    </div>
+    <div className='column-title-sub'>
+      <span class="material-symbols-outlined">add</span>
+      <span class="material-symbols-outlined">more_horiz</span>
+    </div>
+      
+    </div>
+      
       {/* Render cards based on tickets */}
       {tickets.map((ticket) => {
         const user = users.find((user) => user.id === ticket.userId);
