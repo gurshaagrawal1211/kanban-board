@@ -1,0 +1,46 @@
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+.kanban-card{
+    width: 400px;
+    height: 120px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 16px;
+    border: 0.5px solid #ccc;
+    margin-bottom: 16px;
+}
+
+.kanban-card p {
+    font-size: 14px;
+    
+    color: rgb(138, 133, 133);
+}
+
+.kanban-card h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.kanban-card .requestIcon {
+    display: inline-block;
+    margin-right: 8px;
+    color: rgb(138, 133, 133);
+    border: 0.2px solid rgb(207, 207, 207);
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.kanban-card .requestIcon span {
+    font-size: 16px;
+    vertical-align: middle;
+    color: rgb(138, 133, 133);
+}
